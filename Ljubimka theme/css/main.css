@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f8f8f8;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.container {
+    margin: auto;
+    max-width: 1285px;
+    position: relative;
+}
+
+.big-space {
+    height: 1000px;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*Menu*/
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+nav ul {
+    color: #fff;
+    display: flex;
+    list-style: none;
+}
+
+nav .links li {
+    cursor: pointer;
+    margin: 0 30px;
+}
+
+nav .search {
+    position: relative;
+    width: 300px;
+}
+
+nav .search li {
+    list-style: none;
+}
+
+nav .search input {
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    height: 40px;
+    outline: 0;
+    padding-left: 13px;
+    width: 300px;
+}
+
+nav .search input::placeholder {
+    color: #fff;
+}
+
+nav .search input:focus {
+    outline: 0;
+}
+
+nav .search button {
+    color: #fff;
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) {
+    border: 0;
+    padding: 0;
+}
+
+:where(.wp-block-search__button) {
+    border: 0;
+    padding: 0;
+}
+
+nav .search img {
+    left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/*Menu for mobiles*/
+.mob-menu .mob-menu-content {
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.74) 0%, rgba(120, 120, 120, 0) 100%), url(../img/mob-menu-background-2.webp);
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 0 30px 30px;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: -300%;
+    transition: .9s;
+    width: 100%;
+}
+
+.mob-menu .mob-menu-content .helper {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mob-menu .mob-menu-content.active {
+    height: 100vh;
+    left: 0;
+    top: -20px;
+}
+
+body.mobMenu {
+    overflow: hidden;
+}
+
+.mob-menu ul {
+    flex-direction: column;
+    font-size: 35px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.mob-menu ul li {
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+/*Hamburger for phone menu*/
+.ham {
+    cursor: pointer;
+    moz-user-select: none;
+    ms-user-select: none;
+    overflow: hidden;
+    transition: transform 400ms;
+    user-select: none;
+    webkit-tap-highlight-color: transparent;
+    webkit-user-select: none;
+}
+
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+
+.line {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-width: 3.5;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+}
+
+.ham1 .top {
+    stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+    stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+    stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+    stroke-dashoffset: -138px;
+}
+
+/*Top Background*/
+.top-background {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 70%), url(../img/header-background-single-post.webp) no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+}
+
+/*Other styles for top-background for current pet category are in header.php*/
+
+.top-background:after {
+    background: #f8f8f8;
+    border-radius: 35px 35px 0 0;
+    bottom: 0px;
+    content: "";
+    height: 30px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+/*Breadcrumbs*/
+.breadcrumbs ul {
+    display: flex;
+    list-style: none;
+    opacity: 0.7;
+    white-space: pre;
+}
+
+.breadcrumbs ul li {
+    margin: 0 7px;
+}
+
+.breadcrumbs span {
+    margin-right: 7px;
+}
+
+/*Animal header content*/
+.animal-header .content h2 {
+    font-size: 66px;
+    font-weight: 700 !important;
+    margin: 20px 0;
+}
+
+.sub-plus-button {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Subcategories*/
+.subcategories {
+    overflow-x: auto;
+}
+
+.subcategories::-webkit-scrollbar {
+    height: 5px;
+}
+
+.subcategories::-webkit-scrollbar-track {
+    background: #fdfdfd;
+}
+
+.subcategories::-webkit-scrollbar-thumb {
+    background-color: #efefef;
+    border-radius: 50px;
+}
+
+.animal-header .content ul {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    ms-scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
+    webkit-overflow-scrolling: touch;
+}
+
+.animal-header .content li {
+    background: #efefef;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px 0;
+    scroll-snap-align: start;
+    transition: .3s;
+}
+
+.animal-header .content li a {
+    padding: 5px 25px;
+}
+
+.animal-header .content li:hover {
+    background: #0D2F5E;
+    color: #fff;
+}
+
+.animal-header .content li.current-menu-item {
+    background: #0D2F5E;
+    color: #fff;
+}
+
+.animal-header .content #random-post {
+    background: #0D2F5E;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    padding: 13px 30px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.animal-header .content #random-post:hover {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+
+.animal-header hr {
+    margin: 40px auto 0;
+    opacity: 0.3;
+    width: 90%;
+}
+
+/*Grid posts under animal header*/
+.grid-posts-and-pets-category {
+    margin-top: 50px;
+}
+
+.grid-posts-and-pets-category .content {
+    display: grid;
+    grid-template-areas: "petsCategory gridPosts";
+    grid-template-columns: 2fr 10fr;
+}
+
+.grid-posts {
+    display: grid;
+    gap: 20px;
+    grid-area: gridPosts;
+    grid-auto-rows: 180px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 180px 180px 180px 80px;
+}
+
+.grid-posts .grid-post {
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.grid-posts .grid-post:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.grid-posts .grid-post:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.grid-posts .grid-post:nth-child(3),
+.grid-posts .grid-post:nth-child(4),
+.grid-posts .grid-post:nth-child(5) {
+    grid-column: auto;
+    grid-row: 3 / 5;
+}
+
+.grid-posts .grid-post {
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.2));
+    transition: .3s;
+}
+
+.grid-posts .grid-post:hover {
+    transform: translateY(-5px);
+}
+
+.grid-posts .grid-post:hover h3 {
+    color: #0D2F5E;
+}
+
+.grid-posts .grid-post:hover .card {
+    opacity: .8;
+}
+
+.grid-posts .content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-posts .grid-post .post-image {
+    border-radius: 15px;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    position: relative;
+    width: 100%;
+}
+
+.grid-posts .grid-post .card {
+    transition: .6s;
+}
+
+.grid-posts .grid-post:first-child .card,
+.grid-post:nth-child(2) .card {
+    background: #fff;
+    border-radius: 10px;
+    bottom: 30px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.grid-posts .card .helper {
+    padding: 30px;
+}
+
+.grid-posts .grid-post h3 {
+    font-size: 19px;
+    transition: .3s;
+}
+
+.grid-posts .grid-post .card-bottom {
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.grid-posts .grid-post .post-subcategory {
+    align-items: center;
+    display: flex;
+}
+
+.grid-posts .grid-post .subcategory-image {
+    align-items: center;
+    background: #FFA133;
+    border-radius: 50%;
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    margin-right: 10px;
+    width: 35px;
+}
+
+.grid-posts .grid-post .subcategory-image img {
+    filter: invert(100%);
+    height: 60%;
+    width: 60%;
+}
+
+.grid-posts .grid-post .btn-read span {
+    align-items: center;
+    display: flex;
+}
+
+.grid-posts .grid-post .btn-read img {
+    height: 20px;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.grid-posts .grid-post:nth-child(2) .helper {
+    padding: 25px;
+}
+
+.grid-posts .grid-post:nth-child(2) .card h3 {
+    font-size: 17px;
+}
+
+.grid-posts .grid-post:nth-child(2) .card-bottom {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.grid-posts .grid-post:nth-child(2) .content .subcategory-image {
+    height: 25px;
+    margin-right: 7px;
+    width: 25px;
+}
+
+.grid-posts .grid-post:nth-child(2) .btn-read img {
+    height: 15px;
+    margin-right: 10px;
+    width: 15px;
+}
+
+.grid-posts .bottom-post .card {
+    background: #fff;
+    border-radius: 0px 0px 14px 14px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.grid-posts .bottom-post .helper {
+    padding: 15px;
+}
+
+.grid-posts .bottom-post .card h3 {
+    font-size: 17px;
+}
+
+.grid-posts .bottom-post .card-bottom {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.grid-posts .bottom-post .content .subcategory-image {
+    height: 25px;
+    margin-right: 7px;
+    width: 25px;
+}
+
+.grid-posts .bottom-post .btn-read img {
+    height: 15px;
+    margin-right: 10px;
+    width: 15px;
+}
+
+/*Pets main categories*/
+.grid-posts-and-pets-category .pets-category {
+    display: flex;
+    grid-area: petsCategory;
+}
+
+.grid-posts-and-pets-category .pets-category ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.grid-posts-and-pets-category .pets-category li {
+    transition: .3s;
+}
+
+.grid-posts-and-pets-category .pets-category li a {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-weight: 700;
+    padding: 7px 20px 7px 15px;
+}
+
+.grid-posts-and-pets-category .pets-category li:hover {
+    transform: translateX(6px);
+}
+
+.grid-posts-and-pets-category .pets-category li.current-category-ancestor,
+.grid-posts-and-pets-category .pets-category li.current-menu-item {
+    background: #fff;
+    border-radius: 15px;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.2));
+}
+
+.ad-after-grid .content {
+    background: #efefef;
+    border-radius: 10px;
+    margin: 50px 0;
+    padding: 100px;
+    text-align: center;
+}
+
+.grid-posts-and-pets-category .pets-category {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+}
+
+.grid-posts-and-pets-category .pets-category>div {
+    margin-bottom: 15px;
+}
+
+.grid-posts-and-pets-category .pets-category::-webkit-scrollbar {
+    height: 5px;
+}
+
+.grid-posts-and-pets-category .pets-category::-webkit-scrollbar-track {
+    background: #fdfdfd;
+}
+
+.grid-posts-and-pets-category .pets-category::-webkit-scrollbar-thumb {
+    background-color: #efefef;
+    border-radius: 50px;
+}
+
+.grid-posts-and-pets-category .pets-category li a:before {
+    background-size: cover;
+    content: "";
+    height: 50px;
+    margin-right: 10px;
+    position: relative;
+    width: 50px;
+}
+
+/*Different images for categories*/
+.pet_category_dog a:before {
+    background: url(../img/pet-icons/dog.png);
+}
+
+.pet_category_cat a:before {
+    background: url(../img/pet-icons/cat.png);
+}
+
+/*Posts and Sidebar*/
+#posts-with-sidebar {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: "posts sidebar";
+    grid-template-columns: 8fr 3fr;
+}
+
+.blog-posts {
+    grid-area: posts;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+/*Sidebar*/
+.sidebar .category-posts {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.sidebar .category-header {
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+
+.sidebar .category-header .tabs ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.sidebar .category-header .tabs li {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    color: #909090;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    khtml-user-select: none;
+    margin: 0 10px;
+    moz-user-select: none;
+    padding: 10px 20px;
+    user-select: none;
+}
+
+.sidebar .category-header .tabs li.active {
+    background: #0D2F5E;
+    color: #fff;
+}
+
+.sidebar .category-posts .posts-types {
+    display: none;
+}
+
+.sidebar .category-posts .posts-types.active {
+    display: block;
+}
+
+.sidebar .post {
+    padding: 15px;
+    position: relative;
+}
+
+.sidebar .post .helper {
+    align-items: center;
+    display: flex;
+    transition: .3s;
+}
+
+.sidebar .post a.helper:hover {
+    transform: translateX(3px);
+}
+
+.sidebar .post .post-image .helper {
+    border-radius: 10px;
+    height: 75px;
+    margin-left: 5px;
+    overflow: hidden;
+    width: 75px;
+}
+
+.sidebar .post .post-image .helper img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1);
+    width: 100%;
+}
+
+.sidebar .post-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 0 15px;
+    transition: .3s;
+}
+
+.sidebar .post-content h3:hover {
+    color: #0D2F5E;
+}
+
+.sidebar .post:after {
+    background: #000;
+    bottom: 0;
+    content: "";
+    height: .5px;
+    left: 50%;
+    opacity: 0.1;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 70%;
+}
+
+.sidebar .ad {
+    align-items: center;
+    background: #efefef;
+    display: flex;
+    font-size: 20px;
+    height: 400px;
+    justify-content: center;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/*All posts left from sidebar*/
+.blog-posts .all-posts {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.blog-posts .post h3 {
+    line-height: 1.4;
+}
+
+.blog-posts .pagination {
+    margin-top: 40px;
+}
+
+.blog-posts .pagination ul {
+    display: flex;
+    list-style: none;
+}
+
+.blog-posts .pagination a {
+    border-radius: 5px;
+    padding: 15px 20px;
+}
+
+.blog-posts .pagination span.current,
+.next,
+.prev {
+    background: #0D2F5E;
+    border-radius: 5px;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.blog-posts .post {
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.2));
+    height: 350px;
+    transition: .3s;
+}
+
+.blog-posts .post:hover {
+    transform: translateY(-5px);
+}
+
+.blog-posts .post:hover h3 {
+    color: #0D2F5E;
+}
+
+.blog-posts .post:hover .card {
+    opacity: .8;
+}
+
+.blog-posts .content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.blog-posts .post .post-image {
+    border-radius: 15px;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    position: relative;
+    width: 100%;
+}
+
+.blog-posts .card {
+    background: #fff;
+    border-radius: 0px 0px 14px 14px;
+    bottom: 0;
+    position: absolute;
+    transition: .6s;
+    width: 100%;
+}
+
+.blog-posts .helper {
+    padding: 20px;
+}
+
+.blog-posts .card h3 {
+    font-size: 17px;
+    transition: .3s;
+}
+
+.blog-posts .post .card-bottom {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.blog-posts .content .subcategory-image {
+    align-items: center;
+    background: #FFA133;
+    border-radius: 50%;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    margin-right: 7px;
+    width: 25px;
+}
+
+.blog-posts .post .btn-read img {
+    height: 20px;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.blog-posts .post .btn-read span {
+    align-items: center;
+    display: flex;
+}
+
+.blog-posts .post .post-subcategory {
+    align-items: center;
+    display: flex;
+}
+
+.blog-posts .post .subcategory-image img {
+    filter: invert(100%);
+    height: 60%;
+    width: 60%;
+}
+
+/*Footer*/
+footer {
+    background: #f3f3f3;
+    border-top: 0.5px solid #e7e7e7;
+    color: #000;
+    margin-top: 70px;
+    text-align: center;
+}
+
+footer .content {
+    padding: 40px 0;
+}
+
+footer .logo img {
+    width: 170px;
+}
+
+footer .pets-categories ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin-top: 30px;
+}
+
+footer .pets-categories ul li {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 20px;
+}
+
+footer .all-rights-reserved {
+    background: #e9e9e9;
+    border-top: 0.5px solid #dcdcdc;
+    padding: 20px 0;
+}
+
+footer .all-rights-reserved p {
+    font-size: 15px;
+}

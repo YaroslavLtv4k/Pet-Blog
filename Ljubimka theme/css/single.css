@@ -1,0 +1,144 @@
+.post-page .main-post-content{
+	display: grid;
+	grid-template-columns: 8fr 3.5fr;
+	grid-template-areas: 
+		"postContent sidebar"
+	;
+	gap: 45px;
+}
+
+.post-page .main-post-content .content{
+	grid-area: postContent;
+}
+
+.post-page .main-post-content .sidebar{
+	grid-area: sidebar;
+}
+
+
+
+/*Post Categories*/
+.post-categories ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.post-categories ul li{
+  cursor: pointer;
+  padding: 5px 25px;
+  background: #efefef;
+  border-radius: 50px;
+  font-weight: 600;
+  margin: 5px;
+  transition: .3s;
+}
+
+.post-categories ul li:hover {
+    background: #0D2F5E;
+    color: #fff;
+}
+
+
+
+/*Styles for post content*/
+/* Copy & Lists */
+.post-page .main-post-content .content p {
+  line-height: 1.5rem; 
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.post-page .main-post-content .content ul,
+.post-page .main-post-content .content ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-page .main-post-content .content ul li,
+.post-page .main-post-content .content ol li {
+  line-height: 1.5rem;
+}
+
+.post-page .main-post-content .content ul ul,
+.post-page .main-post-content .content ol ul,
+.post-page .main-post-content .content ul ol,
+.post-page .main-post-content .content ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.post-page .main-post-content .content blockquote {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Headings */
+.post-page .main-post-content .content h1,
+.post-page .main-post-content .content h2,
+.post-page .main-post-content .content h3,
+.post-page .main-post-content .content h4,
+.post-page .main-post-content .content h5,
+.post-page .main-post-content .content h6 {
+  /* Change heading typefaces here */
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem;
+}
+
+.post-page .main-post-content .content h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  margin: 1rem 0;
+}
+
+.post-page .main-post-content .content h2 {
+  font-size: 2.3rem;
+  line-height: 3rem;
+  margin-top: 3rem;
+}
+
+.post-page .main-post-content .content h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.post-page .main-post-content .content h4 {
+  font-size: 0.7rem;
+}
+
+.post-page .main-post-content .content h5 {
+  font-size: 0.4713333333333333rem;
+}
+
+.post-page .main-post-content .content h6 {
+  font-size: 0.3535rem;
+}
+
+/* Tables */
+.post-page .main-post-content .content table {
+  margin-top: 1.5rem;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+.post-page .main-post-content .content table td,
+.post-page .main-post-content .content table th {
+  padding: 0;
+  line-height: 33px;
+}
+
+/* Code blocks */
+.post-page .main-post-content .content code {
+  vertical-align: bottom;
+}
+
+.post-page .main-post-content .content img{
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+
+
